@@ -36,6 +36,7 @@ import /vendor/etc/init/hw/init.oem.entry.rc
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.nfc.rc
 import /vendor/etc/init/hw/init.qcom.factory.rc
 
 on early-init
@@ -72,7 +73,7 @@ on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules msm_11ad_proxy
 
 on init
-
+    umount /oem
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0

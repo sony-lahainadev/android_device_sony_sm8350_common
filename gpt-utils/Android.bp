@@ -16,7 +16,7 @@
 
 
 cc_library {
-    name: "libgptutils.oneplus_lahaina",
+    name: "libgptutils.sony",
     vendor: true,
     recovery_available: true,
     shared_libs: [

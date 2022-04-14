@@ -43,6 +43,7 @@ ro.vendor.qti.core_ctl_min_cpu=2
 
 # Radio
 ro.telephony.default_network=33,33
+persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 # Touchscreen
 persist.vendor.qti.inputopts.enable=true
@@ -54,6 +55,19 @@ persist.vendor.data.mode=concurrent
 
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# SOMC
+ro.semc.ms_type_id=PM-1342-BV
+ro.semc.product.device=BC
+ro.semc.product.model=XQ-BC72
+ro.semc.product.name=Xperia 1 III
+ro.semc.version.fs=GENERIC
+ro.semc.version.sw=1320-5254
+ro.semc.version.sw_revision=61.0.A.23.20
+ro.semc.version.sw_variant=CHINA-C2
+ro.semc.version.sw_type=user
+vendor.somc.syscore.variant.name=CHINA-C2
+ro.boot.hardware.sku=XQ-BC72
 
 # Vendor
 ro.vendor.qti.va_aosp.support=1
