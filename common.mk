@@ -210,7 +210,8 @@ PRODUCT_PACKAGES += \
 # Common init scripts
 PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
-    fstab.qcom \
+    fstab.default \
+    fstab.emmc \
     init.nfc.rc \
     ftm_power_config.sh \
     init.class_main.sh \

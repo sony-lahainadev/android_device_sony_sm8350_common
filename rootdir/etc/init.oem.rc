@@ -220,7 +220,6 @@ on fs
     chmod 0666 /sys/class/drm/card0-DSI-1/aod
     chmod 0666 /sys/class/drm/card0-DSI-1/night_mode
     chmod 0666 /sys/class/drm/card0-DSI-1/panel_serial_number
-    chmod 0666 /sys/class/drm/card0-DSI-1/oneplus_mode
     chmod 0666 /sys/class/drm/card0-DSI-1/adaption_mode
     chmod 0666 /sys/class/drm/card0-DSI-1/notify_fppress
     chmod 0666 /sys/class/drm/card0-DSI-1/dim_alpha
@@ -918,28 +917,8 @@ on property:sys.boot_completed=1
     write /sys/devices/platform/soc/1d84000.ufshc/ufstw_lu0/tw_enable 1
     write /sys/devices/platform/soc/1d84000.ufshc/ufstw_lu0/flush_enable 1
     write /sys/devices/platform/soc/1d84000.ufshc/ufstw_lu0/flush_during_hibern_enter 1
-
 # ifdef VENDOR_EDIT
-# narci.gu@SYSTEM, 2018/7/23, [AN-709] Add for keymaster key
-service KmInstallKeybox19805 /vendor/bin/KmInstallKeybox /mnt/vendor/op2/.lii/keyboxes_ciphered.xml OnePlus8T_Key_Attest_0 true
-    class core
-    setenv LD_LIBRARY_PATH /vendor/lib64/hw
-    user system
-    group root
-    disabled
-    oneshot
-    seclabel u:r:keybox_oem:s0
 
-service KmInstallKeybox20809 /vendor/bin/KmInstallKeybox /mnt/vendor/op2/.lii/keyboxes_ciphered.xml OnePlus8TTMO_Key_Attest_0 true
-    class core
-    setenv LD_LIBRARY_PATH /vendor/lib64/hw
-    user system
-    group root
-    disabled
-    oneshot
-    seclabel u:r:keybox_oem:s0
-
-# ifdef VENDOR_EDIT
 # yanamadala.ragini@SYSTEM, 2018/7/23, [AVICII-2558] Add for keymaster key
 service KmInstallKeybox20801 /vendor/bin/KmInstallKeybox /mnt/vendor/op2/.lii/keyboxes_ciphered.xml Nord_Key_Attest_00 true
     class core

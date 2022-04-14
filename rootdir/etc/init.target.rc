@@ -82,7 +82,7 @@ on fs
     mkdir /mnt/vendor/op2 0660 system system
 #endif /* VENDOR_EDIT */
 #ifdef VENDOR_EDIT
-    mount_all /vendor/etc/fstab.qcom --early
+    mount_all /vendor/etc/fstab.default --early
 # ajinath@SYSTEM, 2020/01/16, [OSP-2080] Recovery boot reason
     wait /mnt/vendor/op2
     chown system system /mnt/vendor/op2
@@ -111,7 +111,7 @@ on late-fs
     wait_for_prop hwservicemanager.ready true
     #exec_start wait_for_keymaster
     start console
-    mount_all /vendor/etc/fstab.qcom --late
+    mount_all /vendor/etc/fstab.default --late
 
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
@@ -179,9 +179,7 @@ on property:vendor.usb.controller=*
 #jack.liz@MM.audio, 2020/10/20, add for widvine licenses
 #ifdef/* VENDOR_EDIT */
 on property:sys.boot_completed=1
-    copy /vendor/etc/OnePlus_Widevine_2020_10_12.pfm /mnt/vendor/persist/data/pfm/licenses/OnePlus_Widevine_2020_10_12.pfm
-    chmod 0600 /mnt/vendor/persist/data/pfm/licenses/OnePlus_Widevine_2020_10_12.pfm
-    chown system system /mnt/vendor/persist/data/pfm/licenses/OnePlus_Widevine_2020_10_12.pfm
+
 #endif /* VENDOR_EDIT */
 
 on init && property:ro.boot.mode=charger
@@ -272,7 +270,5 @@ on property:persist.sys.oemlog.pullxlog=true
 # steven.guo@display add LTM license
 #ifdef/* VENDOR_EDIT */
 on property:sys.boot_completed=1
-    copy /vendor/etc/OnePlus_QC_LTM_Commercial_SM8350_2021_01_19.pfm /mnt/vendor/persist/data/pfm/licenses/OnePlus_QC_LTM_Commercial_SM8350_2021_01_19.pfm
-    chmod 0600 /mnt/vendor/persist/data/pfm/licenses/OnePlus_QC_LTM_Commercial_SM8350_2021_01_19.pfm
-    chown system system /mnt/vendor/persist/data/pfm/licenses/OnePlus_QC_LTM_Commercial_SM8350_2021_01_19.pfm
+
 #endif /* VENDOR_EDIT */
