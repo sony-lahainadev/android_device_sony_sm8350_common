@@ -113,9 +113,9 @@ PRODUCT_PACKAGES += \
     otapreopt_script
 
 # ANT+
-#PRODUCT_PACKAGES += \
-#    AntHalService-Soong \
-#    com.dsi.ant@1.0.vendor
+PRODUCT_PACKAGES += \
+    AntHalService-Soong \
+    com.dsi.ant@1.0.vendor
 
 # Atrace
 PRODUCT_PACKAGES += \
