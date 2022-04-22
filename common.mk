@@ -30,7 +30,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/sony/sm8350-common/sm8350-common-vendor.mk)
+#$(call inherit-product, vendor/sony/sm8350-common/sm8350-common-vendor.mk)
 
 # Additional native libraries
 PRODUCT_COPY_FILES += \
@@ -46,6 +46,24 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 # Device uses high-density artwork where available
 #PRODUCT_AAPT_CONFIG := normal
 #PRODUCT_AAPT_PREF_CONFIG := xxxhdpi
+
+
+
+
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
+PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
+
+
+
+
+
+
+
+
+
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -213,6 +231,7 @@ PRODUCT_PACKAGES += \
     fstab.default \
     fstab.emmc \
     init.nfc.rc \
+    init.sm8350-common.rc \
     ftm_power_config.sh \
     init.class_main.sh \
     init.cust.rc \
@@ -221,7 +240,6 @@ PRODUCT_PACKAGES += \
     init.oem.rc \
     init.oem_ftm.rc \
     init.oem_rf.rc \
-    init.oplus_chg.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
     init.qcom.factory.rc \
